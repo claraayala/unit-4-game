@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <title>simple crystal game</title>
-
+  <title>Sonic The Hedgehog Guessing Game</title>
+  
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
@@ -17,88 +17,13 @@
   <h2>Total Wins: <span id="totalwins"></span></h2>
   <h2>Total Losses: <span id="totallosses"></span></h2>
 
-  <div id="crystals">
+  <div id="sonicbuttons">
   </div>
-
-
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script type="text/javascript">
-    var targetNumber;
-    var counter = 0;
-    var totalWins = 0;
-    var totalLosses = 0;
+  <script src="assets/javascript/game.js"></script>
 
-    var startandStop = function () {
-
-      $("#crystals").empty();
-
-      targetNumber = Math.floor(Math.random() * 122) + 1;
-
-      $("#number-to-guess").html(targetNumber);
-
-
-      for (var i = 0; i < 4; i++) {
-
-        var numberOptions = Math.floor(Math.random() * 12) + 1;
-        var imageCrystal1 = $("<img>");
-
-
-
-        
-        $(imageCrystal1).addClass("crystal-image");
-
-        
-        $(imageCrystal1).attr("src", "https://images-eu.ssl-images-amazon.com/images/I/81yM0eCnHsL.png");
-
-
-
-
-        $(imageCrystal1).attr("data-crystalvalue", numberOptions);
-
-
-        $("#crystals").append(imageCrystal1);
-      }
-    }
-
-    startandStop();
-
-    $(document).on("click", ".crystal-image", function () {
-
-
-      var crystalValue = parseInt($(this).attr("data-crystalvalue"));
-
-      
-      counter += crystalValue;
-
-      
-      $("#newscore").html(counter);
-
-
-
-      if (counter === targetNumber) {
-        totalWins++;
-        $("#totalwins").html(totalWins);
-        counter = 0;
-        startandStop ();
-
-      }
-
-      else if (counter > targetNumber) {
-        totalLosses++;
-        $("#totallosses").html(totalLosses);
-        counter = 0;
-        startandStop ();
-
-
-      }
-
-    })
-
-
-
-  </script>
 </body>
 
 </html>

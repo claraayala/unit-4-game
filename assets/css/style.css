@@ -1,4 +1,4 @@
-.crystal-image {
+.sonic-image {
     width: 200px;
     height: 200px;
     margin-left: 10px;
@@ -6,12 +6,13 @@
     
   }
 
-#crystals {
+#sonicbuttons {
   width: 100%;
   text-align: center;
   position: absolute;
   bottom: 0px;
   margin-bottom: 20px;
+  
 }
 
 
